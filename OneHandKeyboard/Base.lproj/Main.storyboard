@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jCy-MO-asx"/>
+                        <viewControllerLayoutGuide type="bottom" id="25F-j0-14p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Type by touching the screen :)" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSw-WL-Hbh">
+                                <rect key="frame" x="0.0" y="10" width="1024" height="758"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tst-mP-qa6">
+                                <rect key="frame" x="72" y="86" width="601" height="384"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3e-AC-LUK">
+                                        <rect key="frame" x="36" y="84" width="80" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="TTV-0x-FGt"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="w2y-IZ-EcE"/>
+                                        </connections>
+                                    </pickerView>
+                                    <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxW-HD-3hu">
+                                        <rect key="frame" x="146" y="84" width="80" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="89m-UP-K40"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="cX5-a9-91p"/>
+                                        </connections>
+                                    </pickerView>
+                                    <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BiS-ev-i2S">
+                                        <rect key="frame" x="260" y="84" width="80" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="zl3-gd-IyQ"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="LDf-h2-IKt"/>
+                                        </connections>
+                                    </pickerView>
+                                    <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UuR-gG-VwE">
+                                        <rect key="frame" x="370" y="84" width="80" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="sPn-ny-0Ec"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="RVp-h3-bDd"/>
+                                        </connections>
+                                    </pickerView>
+                                    <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OWh-50-ufZ">
+                                        <rect key="frame" x="485" y="84" width="80" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="z1q-vH-B1c"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="7uU-u2-XyQ"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.90830291970802923" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
+                            </view>
+                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wjN-F4-ny1">
+                                <rect key="frame" x="472" y="276" width="80" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="IbD-yX-ZwJ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="viC-6D-CEI"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fSw-WL-Hbh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AX6-aj-Jd0"/>
+                            <constraint firstItem="25F-j0-14p" firstAttribute="top" secondItem="fSw-WL-Hbh" secondAttribute="bottom" id="RIt-NE-hiN"/>
+                            <constraint firstItem="fSw-WL-Hbh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="hkk-CM-Q2N"/>
+                            <constraint firstAttribute="trailing" secondItem="fSw-WL-Hbh" secondAttribute="trailing" id="nBZ-s2-tdg"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="svForefinger" destination="cxW-HD-3hu" id="FdC-G9-v0a"/>
+                        <outlet property="svMiddleFinger" destination="BiS-ev-i2S" id="Qvj-0C-owa"/>
+                        <outlet property="svPinky" destination="OWh-50-ufZ" id="2yz-Uu-dru"/>
+                        <outlet property="svRingFinger" destination="UuR-gG-VwE" id="7HP-wE-uNg"/>
+                        <outlet property="svThumb" destination="V3e-AC-LUK" id="Iz4-Ts-M2g"/>
+                        <outlet property="tcText" destination="fSw-WL-Hbh" id="Nz9-PN-wBl"/>
+                        <outlet property="vPad" destination="wjN-F4-ny1" id="qud-kh-mQf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
