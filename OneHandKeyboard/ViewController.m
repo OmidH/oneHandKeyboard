@@ -23,6 +23,7 @@
     NSArray *activeKeySet;
     enum Finger activeFinger;
     BOOL fingerDetermined;
+    NSTimer *timer;
 }
 
 - (void)viewDidLoad
@@ -70,8 +71,10 @@
         
         fingerCount += touches.count;
         
-        if(fingerCount >= 5)
+        if(fingerCount >= 5) {
             isInInitMode = NO;
+            [_tcText setText:@""];
+        }
     } else {
     
         CGPoint touchPoint = [[touches anyObject] locationInView:self.view];
@@ -89,11 +92,18 @@
             //NSLog(@"%d != %d", (selectedRow++%activeKeySet.count), (++selectedRow%activeKeySet.count));
 //            if(selectedRow == activeKeySet.count)
 //                selectedRow = 0;
-            [_vPad selectRow:(++selectedRow%activeKeySet.count) inComponent:0 animated:YES];
+            [self setCursor:selectedRow];
         }
         fingerDetermined = YES;
     }
     
+}
+
+- (void)setCursor:(int)selectedRow {
+    [_vPad selectRow:(++selectedRow % activeKeySet.count) inComponent:0 animated:YES];
+    if(timer)
+        [timer invalidate];
+    timer = [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(applyCharacter:) userInfo:nil repeats:NO];
 }
 
 //-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -137,11 +147,16 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    //return @"A";
     return [activeKeySet objectAtIndex:row];
 }
 
 #pragma mark - Methods
+
+- (void)applyCharacter:(NSTimer *)timer {
+    NSString *selectedCharacter = [activeKeySet objectAtIndex:[_vPad selectedRowInComponent:0]];
+    [_tcText setText:[NSString stringWithFormat:@"%@ %@",_tcText.text, selectedCharacter]];
+    NSLog(@"apply Character: %@", selectedCharacter);
+}
 
 - (BOOL)changeKeyboardLayout:(CGPoint)touchPoint {
     enum Finger theFinger = [[KeyboardHandler sharedHandler] identifyFinger:touchPoint];

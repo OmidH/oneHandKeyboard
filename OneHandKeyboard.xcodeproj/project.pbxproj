@@ -213,7 +213,7 @@
 						DevelopmentTeam = PFJ2884P4U;
 					};
 					2E2F7A3B1823D4D4003A7237 = {
-						TestTargetID = 2E2F7A1A1823D4D4003A7237 /* OneHandKeyboard */;
+						TestTargetID = 2E2F7A1A1823D4D4003A7237;
 					};
 				};
 			};
